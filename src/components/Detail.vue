@@ -11,7 +11,8 @@ export default {
 
     created(){
 
-        this.find()
+        this.find();
+
 
     },
 
@@ -22,14 +23,14 @@ export default {
     },
     methods:{
         find: function(){
-           fetch('http://localhost:8000/api/element/1/?format=json')
+           fetch("http://localhost:8000/api/element/"+this.$route.params.id+"/?format=json")
                 .then(res => res.json())
-                .then(res => this.element = res)
+                .then(res => (this.element = res));
 
            
         }
-    },
-}
+    }
+};
 </script>
 
 <style>

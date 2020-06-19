@@ -1,33 +1,34 @@
 <template>
   <div id="app">
-    <List/>
+    <Header/>
+    <Categories/>
+  <router-link to="/">List</router-link>
+    <router-link to="/detail">Detail</router-link>
+
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+//import Header from './components/Header'
+
 //import HelloWorld from './components/HelloWorld.vue'
 //import HolaMundo from './components/HolaMundo'
 //import List from './components/Table'
-import List from './components/List'
-//import Detail from './components/Detail'
+//import List from './components/List'
+
+import Header from './components/Header'
+import Categories from './components/Categories'
 
 
 export default {
   name: 'App',
   components: {
-    List,
+    //List,
+    Header,
+    Categories
     //Detail
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
