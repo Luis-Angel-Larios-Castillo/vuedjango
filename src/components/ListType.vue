@@ -29,7 +29,7 @@ export default {
     },
     methods:{
         findAll: function(){
-           fetch('http://localhost:8000/api/category/'+this.$route.params.id+'/elements/?format=json')
+           fetch('http://localhost:8000/api/type/'+this.$route.params.id+'/elements/?format=json')
                 .then(res => res.json())
                 .then(res => this.elements = res)
 
