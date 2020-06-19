@@ -1,11 +1,11 @@
 <template>
     <div>
-           <b-card>
+        <b-card>
                <h1>{{ element.title }}</h1>
-               <div class="p-3">
-
-                   <router-link class="btn btn-danger btn-sm" :to="{name:'list-category', params:{id: element.category}}">{{category.title}}</router-link>
-                   <router-link class="ml-2 btn btn-danger btn-sm" :to="{name:'list-type', params:{id: element.type}}">{{type.title}}</router-link>
+               <div class="p-3" v-if="element.category">
+                <router-link class="btn btn-danger btn-sm" :to="{name:'list-category', params:{id: element.category}}"
+                   >{{category.title}}</router-link>
+                   <router-link class="ml-2 btn btn-danger btn-sm" :to="{ name:'list-type',params:{id: element.type}}">{{type.title}}</router-link>
                     <b-card-text>{{ element.description }}</b-card-text>
                </div>
             </b-card>
@@ -36,7 +36,7 @@ export default {
     },
     methods:{
         find: function(){
-           fetch("http://localhost:8000/api/element/"+this.$route.params.id+"/?format=json")
+           fetch("http://localhost:8000/api/element/"+ this.$route.params.id+"/?format=json")
                 .then(res => res.json())
                 .then(res => {
                     this.element = res;

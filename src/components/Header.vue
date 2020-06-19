@@ -2,11 +2,11 @@
     <div>
         <b-navbar  type="dark" variant="primary" class="mb-3">
             <b-navbar-brand>
-                Elements
+            Luis Angel Larios Castillo 9°B
             </b-navbar-brand>
 
             <b-navbar-nav>
-                <b-nav-item href="#">Home</b-nav-item>
+                <b-nav-item to="/">Home</b-nav-item>
 
                 <b-nav-item-dropdown text="User" right>
                     <b-dropdown-item href="#">Account</b-dropdown-item>
