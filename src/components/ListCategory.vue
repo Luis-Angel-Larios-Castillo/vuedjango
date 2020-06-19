@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div>
     <ListDefault :elements-list="elements"/>  
     </div>
         
@@ -17,7 +17,6 @@ export default {
     },
 
     created(){
-
         this.findAll()
 
     },
@@ -36,7 +35,14 @@ export default {
            
         }
     },
-}
+    watch:{
+        "$route.params.id": function(){
+            console.log("Listado de categorias")
+            this.findAll()
+        }
+    }
+
+};
 </script>
 
 <style>
